@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor Devs</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-card">
+      <p class="auth-marca">Gestor<span>Dev's</span></p>
+      <p class="auth-subtitulo">Gerenciador de tarefas simples</p>
+
+      <div class="tabs">
+        <button id="tab-login" class="tab tab--ativa">Entrar</button>
+        <button id="tab-register" class="tab">Criar conta</button>
+      </div>
+
+      <form id="form-login">
+        <div class="campo">
+          <label for="login-email">Email</label>
+          <input id="login-email" type="email" required autocomplete="email" />
+        </div>
+        <div class="campo">
+          <label for="login-senha">Senha</label>
+          <input
+            id="login-senha"
+            type="password"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+        <button type="submit" class="btn-primario">Entrar</button>
+      </form>
+
+      <form id="form-register" hidden>
+        <div class="campo">
+          <label for="register-nome">Nome</label>
+          <input id="register-nome" type="text" required />
+        </div>
+        <div class="campo">
+          <label for="register-email">Email</label>
+          <input
+            id="register-email"
+            type="email"
+            required
+            autocomplete="email"
+          />
+        </div>
+        <div class="campo">
+          <label for="register-senha">Senha</label>
+          <input
+            id="register-senha"
+            type="password"
+            required
+            minlength="4"
+            autocomplete="new-password"
+          />
+        </div>
+        <button type="submit" class="btn-primario">Criar conta</button>
+      </form>
+
+      <p id="feedback" class="feedback" hidden></p>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

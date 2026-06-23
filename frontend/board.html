@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor Dev's — Board</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="board-header">
+      <p class="board-marca">Gestor<span>Dev's</span></p>
+      <div class="board-header__direita">
+        <button id="btn-nova-tarefa" class="btn-secundario">
+          + Nova tarefa
+        </button>
+        <span id="nome-usuario"></span>
+        <button id="btn-logout" class="btn-secundario">Sair</button>
+      </div>
+    </header>
+
+    <main class="board">
+      <section class="coluna" data-coluna="todo">
+        <div class="coluna__cabecalho">
+          <span class="coluna__indicador"></span>
+          <span class="coluna__titulo">A Fazer</span>
+          <span class="coluna__contador">0</span>
+        </div>
+        <div class="coluna__cards"></div>
+      </section>
+
+      <section class="coluna" data-coluna="in_progress">
+        <div class="coluna__cabecalho">
+          <span class="coluna__indicador"></span>
+          <span class="coluna__titulo">Em Progresso</span>
+          <span class="coluna__contador">0</span>
+        </div>
+        <div class="coluna__cards"></div>
+      </section>
+
+      <section class="coluna" data-coluna="done">
+        <div class="coluna__cabecalho">
+          <span class="coluna__indicador"></span>
+          <span class="coluna__titulo">Finalizado</span>
+          <span class="coluna__contador">0</span>
+        </div>
+        <div class="coluna__cards"></div>
+      </section>
+    </main>
+
+    <dialog id="modal-tarefa">
+      <form id="form-tarefa" class="modal">
+        <h2 id="modal-titulo">Nova tarefa</h2>
+
+        <div class="campo">
+          <label for="input-titulo">Título</label>
+          <input id="input-titulo" type="text" required maxlength="120" />
+        </div>
+
+        <div class="campo">
+          <label for="input-descricao">Descrição</label>
+          <textarea id="input-descricao" maxlength="500"></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="input-status">Status</label>
+          <select id="input-status">
+            <option value="todo">To Do</option>
+            <option value="in_progress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="input-responsavel">Responsável</label>
+          <select id="input-responsavel"></select>
+        </div>
+
+        <p id="erro-modal" class="feedback feedback--erro" hidden></p>
+
+        <div class="modal__acoes">
+          <button type="button" id="btn-excluir" class="btn-perigo" hidden>
+            Excluir
+          </button>
+          <div class="modal__acoes-direita">
+            <button type="button" id="btn-cancelar" class="btn-secundario">
+              Cancelar
+            </button>
+            <button type="submit" class="btn-primario">Salvar</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="js/api.js"></script>
+    <script src="js/board.js"></script>
+  </body>
+</html>
